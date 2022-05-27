@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace labodev
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int gol, yenilen_gol, asist, kurtaris, basarili_mudahale, a;
+            long puan;
+            string mevki; /*STRİNG YAPISINI BURADA KULLANDIM*/
+            Console.WriteLine("Mevkinizi giriniz");
+            mevki = Convert.ToString(Console.ReadLine());
+            while (mevki == "forvet")
+            {
+                Console.WriteLine("Attiginiz gol sayisini girinz:");
+                gol = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Asist sayisini giriniz:");
+                asist = Convert.ToInt32(Console.ReadLine());
+                if (gol > asist)
+                {
+                    puan = Math.BigMul(3*gol, 2*asist); /* MATH İŞLEMLERİNİ BURADA KULLANDIM DİĞER HESAPLAMALARDA DA VAR*/
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+                else
+                {
+                    puan = Math.BigMul(gol, 3 *asist);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+            }
+            while (mevki == "ortasaha")
+            {
+                Console.WriteLine("Attiginiz gol sayisini girinz:");
+                gol = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Asist sayisini giriniz:");
+                asist = Convert.ToInt32(Console.ReadLine());
+                if (gol > asist)
+                {
+                    puan = Math.BigMul(gol, 4*asist);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+                else
+                {
+                    puan = Math.BigMul(gol, 2*asist);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+            }
+            while (mevki == "defans")
+            {
+                Console.WriteLine("Basarili mudahale sayinizi giriniz:");
+                basarili_mudahale = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Asist sayisini giriniz:");
+                asist = Convert.ToInt32(Console.ReadLine());
+                if (basarili_mudahale > asist)
+                {
+                    puan = Math.BigMul(4 * basarili_mudahale, asist);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+                else
+                {
+                    puan = Math.BigMul(basarili_mudahale, 3*asist);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+            }
+            while (mevki == "kaleci")
+            {
+                Console.WriteLine("Kurtaris sayisini girinz:");
+                kurtaris = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Yenilen gol sayisini giriniz:");
+                yenilen_gol = Convert.ToInt32(Console.ReadLine());
+                if (kurtaris > yenilen_gol)
+                {
+                    puan = Math.BigMul(kurtaris, yenilen_gol);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+                else
+                {
+                    puan = Math.BigMul(kurtaris, yenilen_gol);
+                    Console.WriteLine("Puaniniz:{0}", puan);
+                }
+            }
+        }
+    }
+}
